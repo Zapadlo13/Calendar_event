@@ -1,0 +1,47 @@
+{% extends 'cal/base.html' %}
+{% block content %}
+    <main>
+        <div class="container-fluid">
+            <h1 class="mt-4">Создание события</h1>
+            <form action="{% url 'event:new_event' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="small mb-1" for="{{ form.user.id_for_label }}">Пользователь</label>
+                            {{ form.user }}
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="small mb-1" for="{{ form.title.id_for_label }}">Название</label>
+                            {{ form.title }}
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <label class="small mb-1" for="{{ form.date_event.id_for_label }}">Начало события</label>
+                        {{ form.date_event }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="small mb-1" for="{{ form.description.id_for_label }}">Описание</label>
+                            {{ form.description }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-lg-12" style="margin-top: 33px;">
+                        <input class="btn btn-info btn-block" type="submit" value="Сохранить">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+{% endblock %}
