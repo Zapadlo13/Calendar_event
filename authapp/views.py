@@ -36,6 +36,7 @@ class RegisterFormView(FormView):
 
             return HttpResponseRedirect(reverse('authapp:login'))
 
+
 class Logout(LogoutView):
     template_name = "cal/calendar.html"
     success_url = reverse_lazy('event:index')

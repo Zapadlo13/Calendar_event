@@ -14,22 +14,6 @@
     <link rel="stylesheet" href="{% static 'css/master.css' %}" type="text/css" media="screen" charset="utf-8"/>
     <link href="{% static 'css/authapp.css' %}" rel="stylesheet"/>
 
-    {% block title %}
-        <title>{{ title|title }}</title>
-    {% endblock %}
-
-    {% block css %}
-
-    {% endblock %}
-    <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker12').datetimepicker({
-                inline: true,
-                sideBySide: true,
-                format: 'DD.MM.YYYY' /*remove this line if you want to use time as well */
-            });
-        });
-    </script>
 </head>
 
 <body>
@@ -37,7 +21,7 @@
 {% include 'cal/includes/navbar.html' %}
 
 {% if  messages %}
-    <div class="alert {% if messages == messages.SUCCESS %} alert-success  {% else %} alert-warning  {% endif %} alert-dismissible fade show"
+    <div class="alert {% if messages.level == 20 %} alert-success  {% else %} alert-warning  {% endif %} alert-dismissible fade show"
          role="alert"
          style="margin-top: 50px;">
         {% if messages %}

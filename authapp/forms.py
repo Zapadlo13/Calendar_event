@@ -2,7 +2,6 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
 
 
-
 class UserLoginForm(AuthenticationForm):
     class Meta:
         model = User
@@ -15,7 +14,6 @@ class UserLoginForm(AuthenticationForm):
 
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control py-4'
-
 
 
 class UserRegisterForm(UserCreationForm):

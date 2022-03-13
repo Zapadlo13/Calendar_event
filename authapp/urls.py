@@ -1,7 +1,6 @@
 from django.urls import path
 
 from authapp.views import LoginListView, RegisterFormView, Logout
-from cal.views import CalendarView
 
 app_name = 'authapp'
 urlpatterns = [
