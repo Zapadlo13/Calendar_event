@@ -4,7 +4,7 @@
     <div class="clearfix">
         <a class="btn btn-info left" href="{% url 'event:calendar' prev_month %}"> Прошлый месяц </a>
         <a class="btn btn-info right" href="{% url 'event:calendar' next_month %}"> Следующий месяц </a>
-        <a class="btn btn-info right" href="{% url 'event:new_event' %}"> Новое событие </a>
+        <a class="btn btn-success right" href="{% url 'event:new_event' %}"> Новое событие </a>
     </div>
 
     {{ calendar }}
